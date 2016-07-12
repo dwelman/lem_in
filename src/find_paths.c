@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/12 15:10:06 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/12 15:17:54 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	find_paths(t_info *info)
 	while (i < START->num_links)
 	{
 		if (info->checked != NULL)
-			//ft_lstdel(info->checked);
+			ft_lstdel(info->checked);
 		info->checked = NULL;
 		ft_lstappend(&info->checked, ft_lstnew((void *)START->name));
 		info->ret = 0;
