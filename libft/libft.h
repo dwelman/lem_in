@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/05/10 09:14:36 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/08 12:15:59 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/12 08:17:14 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct	s_list
 	int				op_pos;
 	struct s_list	*next;
 }				t_list;
+
+void			ft_lstdel(t_list *start);
 
 void			ft_lstappend(t_list **list, t_list *node);
 

@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/08 18:45:59 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/12 15:09:56 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "../libft/libft.h"
 # define NODES info->nodes
+# define START info->start
 
 typedef struct	s_connect
 {
@@ -34,14 +35,23 @@ typedef struct	s_node
 	int				y;
 }				t_node;
 
+typedef struct	s_ant
+{
+	int			number;
+	t_node		*room;
+}				t_ant;
+
 typedef struct	s_info
 {
 	int			num_ants;
 	int			num_rooms;
+	int			ret;
 	char		**input;
 	t_node		**nodes;
 	t_node		*start;
 	t_node		*end;
+	t_list		*checked;
+	//t_list		*paths;
 }				t_info;
 
 void			read_info(t_info *info);
@@ -57,5 +67,7 @@ void			fill_nodes(t_info *info, int *i);
 int				find_elem(t_node **nodes, char *name, int num);
 
 void			connect_nodes(t_info *info, int *i);
+
+void			find_paths(t_info *info);
 
 #endif

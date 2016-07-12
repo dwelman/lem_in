@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/08 14:41:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/12 13:46:39 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,14 @@ t_list	*store_info(void)
 
 	get_next_line(0, &line);
 	first = ft_lstnew((void *)line);
+	ft_printf("%s\n", line);
 	while (get_next_line(0, &line))
 	{
+		ft_printf("%s\n", line);
 		list = ft_lstnew((void *)line);
 		ft_lstappend(&first, list);
 	}
+	ft_printf("\n");
 	return (first);
 }
 
@@ -67,6 +70,39 @@ void	interpret_input(t_info *info)
 }
 
 /*
+** Ensures that the map has a start and end point
+*/
+
+void	check_map(char **arr, int length)
+{
+	int	i;
+	int	start;
+	int	end;
+
+	i = 0;
+	start = 0;
+	end = 0;
+	while (i < length)
+	{
+		if (ft_strcmp(arr[i], "##start") == 0)
+		{
+			start++;
+			if (ft_strcmp(arr[i + 1], "##end") == 0)
+				error();
+		}
+		if (ft_strcmp(arr[i], "##end") == 0)
+		{
+			end++;
+			if (ft_strcmp(arr[i + 1], "##start") == 0)
+				error();
+		}
+		i++;
+	}
+	if (!(start == 1 && end == 1))
+		error();
+}
+
+/*
 ** Reads input into an array
 */
 
@@ -90,5 +126,6 @@ void	read_info(t_info *info)
 		i++;
 	}
 	info->input[i] = NULL;
+	check_map(info->input, length);
 	interpret_input(info);
 }

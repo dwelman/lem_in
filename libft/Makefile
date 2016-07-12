@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/05/11 13:05:40 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/08 14:18:38 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/12 08:18:49 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ FILES = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 		ft_getflags.c ft_padfunc.c ft_padfuncch.c ft_padfuncwide.c \
 		ft_printf.c ft_printfaux.c ft_putstrwide.c ft_strlenwide.c \
 		ft_lstnew.c ft_lstswap.c ft_lstpop.c ft_lstpush.c ft_lstrot.c \
-		ft_lstrotrev.c ft_lstpushpop.c ft_lstappend.c
+		ft_lstrotrev.c ft_lstpushpop.c ft_lstappend.c ft_lstdel.c
 
 OBJECTS = $(FILES:.c=.o)
 

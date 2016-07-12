@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 15:18:39 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/08 18:48:37 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/12 14:45:39 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,18 @@ int		count_connections(t_info *info, int j)
 	i = 0;
 	while (info->input[j])
 	{
-		i++;
+		if (*info->input[j] != '#')
+			i++;
 		j++;
 	}
 	return (i + 1);
 }
 
-void	set_link(t_info *info, char *name, t_connect connect, int link)
+/*
+** Makes a link between 2 rooms based on the input given
+*/
+
+int		set_link(t_info *info, char *name, t_connect connect, int link)
 {
 	int		connections;
 	int		temp_link;
@@ -44,12 +49,16 @@ void	set_link(t_info *info, char *name, t_connect connect, int link)
 	{
 		temp_link = find_elem(NODES, temp[1], connections);
 		NODES[connect.k]->links[link] = NODES[temp_link];
+		return (1);
 	}
-	else
+	else if (ft_strcmp(temp[1], name) == 0)
 	{
 		temp_link = find_elem(NODES, temp[0], connections);
 		NODES[connect.k]->links[link] = NODES[temp_link];
+		return (1);
 	}
+	else
+		return (0);
 }
 
 /*
@@ -60,6 +69,7 @@ void	make_links(t_info *info, char *name, int j, int k)
 {
 	int			link;
 	t_connect	connect;
+	char		*tmp;
 
 	connect.i = j;
 	connect.j = j;
@@ -67,11 +77,12 @@ void	make_links(t_info *info, char *name, int j, int k)
 	link = 0;
 	while (info->input[connect.i])
 	{
-		if (ft_strstr(info->input[connect.i], name) != NULL)
-		{
-			set_link(info, name, connect, link);
-			link++;
-		}
+		if (*info->input[connect.i] != '#')
+			if ((tmp = ft_strstr(info->input[connect.i], name)) != NULL)
+			{
+				if (set_link(info, name, connect, link) == 1)
+					link++;
+			}
 		connect.i++;
 	}
 }
@@ -89,7 +100,7 @@ int		count_nodes(t_info *info, char *name, int j)
 	count = 0;
 	while (info->input[i])
 	{
-		if (ft_strstr(info->input[i], name) != NULL)
+		if (ft_strstr(info->input[i], name) != NULL && *info->input[i] != '#')
 			count++;
 		i++;
 	}
