@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/13 13:45:04 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/14 09:16:54 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ typedef struct	s_info
 	t_list		*checked;
 	t_list		*paths;
 }				t_info;
+
+void			rev_paths(t_list *paths);
 
 void			read_info(t_info *info);
 

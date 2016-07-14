@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/08 22:18:07 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/14 09:17:54 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRC = $(PATH)main.c \
 	  $(PATH)free_arr.c \
 	  $(PATH)find_elem.c \
 	  $(PATH)connect_nodes.c \
-	  $(PATH)find_paths.c
+	  $(PATH)find_paths.c \
+	  $(PATH)rev_lists.c
 
 OBJ = $(SRC:.c=.o)
 

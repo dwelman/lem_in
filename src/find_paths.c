@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/13 15:28:56 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/14 09:13:30 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ int		check_node(t_list *list, t_node *node)
 }
 
 /*
-** A recursive algorithm 
+** A recursive algorithm that uses backtracking to find all possible paths the
+** ants can take from every node linked to the start node
+*/
 
 int		search(t_info *info, t_node *node, t_node *goal)
 {
@@ -45,14 +47,8 @@ int		search(t_info *info, t_node *node, t_node *goal)
 		if (ft_strcmp(node->name, goal->name) == 0)
 		{
 			ft_lstpush(&info->checked, ft_lstnew((void*)ft_strdup(node->name)));
-			crawl = info->checked;
-			ft_printf("\n");
-			while (crawl != NULL)
-			{
-				ft_printf("path = %s\n", (char *)crawl->data);
-				crawl = crawl->next;
-			}
-			ft_lstappend(&info->paths, ft_lstnew((void *)info->checked));
+			ft_lstappend(&info->paths,
+					ft_lstnew((void *)ft_lstcpy(info->checked)));
 			info->ret = 1;
 			i = node->num_links;
 		}
@@ -73,30 +69,31 @@ void	find_paths(t_info *info)
 
 	i = 0;
 	info->paths = NULL;
+	info->checked = NULL;
+	ft_lstappend(&info->checked, ft_lstnew((void *)START->name));
 	while (i < START->num_links)
 	{
 		info->ret = 0;
-		info->checked = NULL;
-		ft_lstappend(&info->checked, ft_lstnew((void *)START->name));
 		if (search(info, START->links[i], info->end))
-			ft_printf("%s%s = SUCCESS\n%s", "\x1B[32m", START->links[i]->name, "\x1B[37m");
+			ft_printf("%s%s = SUCCESS\n%s", "\x1B[32m", START->links[i]->name, "\x1B[37m"); ////////////////
 		else
-			ft_printf("%s%s = FAILURE\n%s", "\x1B[31m", START->links[i]->name, "\x1B[37m");
+			ft_printf("%s%s = FAILURE\n%s", "\x1B[31m", START->links[i]->name, "\x1B[37m"); ///////////////
 		i++;
 	}
-	/*t_list	*crawl;
+	t_list	*crawl;
 	t_list	*temp;
 
+	rev_paths(info->paths);
 	crawl = info->paths;
 	while (crawl != NULL)
 	{
 		temp = (t_list *)crawl->data;
+		ft_printf("\n");
 		while (temp != NULL)
 		{
-			ft_printf("HAI\n");
-			//ft_printf("%s\n", (char *)temp->data);
+			ft_printf("%s\n", (char *)temp->data);
 			temp = temp->next;
 		}
 		crawl = crawl->next;
-	}*/
+	}
 }
