@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/14 09:13:30 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/15 13:23:56 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,17 +83,20 @@ void	find_paths(t_info *info)
 	t_list	*crawl;
 	t_list	*temp;
 
+	i = 0;
 	rev_paths(info->paths);
 	crawl = info->paths;
 	while (crawl != NULL)
 	{
 		temp = (t_list *)crawl->data;
-		ft_printf("\n");
+		ft_printf("\nindex = %d\n", i);
 		while (temp != NULL)
 		{
 			ft_printf("%s\n", (char *)temp->data);
 			temp = temp->next;
 		}
 		crawl = crawl->next;
+		i++;
 	}
+	trim_paths(info, info->paths);
 }

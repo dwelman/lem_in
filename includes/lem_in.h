@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/14 09:16:54 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/15 20:17:23 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,18 @@ typedef struct	s_info
 	t_node		*end;
 	t_list		*checked;
 	t_list		*paths;
+	t_list		*short_paths;
 }				t_info;
+
+void			print_paths(t_list *paths);
+
+void			rm_intersect(t_info *info);
+
+void			ft_lst_removeindex(t_list **list, int index);
+
+int				count_path(t_list *path);
+
+void			trim_paths(t_info *info, t_list *paths);
 
 void			rev_paths(t_list *paths);
 

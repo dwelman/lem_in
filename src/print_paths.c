@@ -1,24 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_paths.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/15 13:20:51 by daviwel          ###   ########.fr       */
+/*   Created: 2016/07/15 17:55:11 by daviwel           #+#    #+#             */
+/*   Updated: 2016/07/15 20:17:17 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-int	main(void)
+void	print_paths(t_list *paths)
 {
-	t_info	info;
+	int		i;
+	t_list	*crawl;
+	t_list	*temp;
 
-	info.checked = NULL;
-	info.short_paths = NULL;
-	read_info(&info);
-	find_paths(&info);
-	return (0);
+	i = 0;
+	//rev_paths(paths);
+	crawl = paths;
+	while (crawl != NULL)
+	{
+		temp = (t_list *)crawl->data;
+		ft_printf("\nindex = %d\n", i);
+		while (temp != NULL)
+		{
+			ft_printf("%s\n", (char *)temp->data);
+			temp = temp->next;
+		}
+		crawl = crawl->next;
+		i++;
+	}
 }
