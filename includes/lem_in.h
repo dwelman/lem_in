@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/15 20:17:23 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 13:55:10 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct	s_node
 typedef struct	s_ant
 {
 	int			number;
-	t_node		*room;
+	t_list		*path;
 }				t_ant;
 
 typedef struct	s_info
@@ -54,6 +54,8 @@ typedef struct	s_info
 	t_list		*paths;
 	t_list		*short_paths;
 }				t_info;
+
+void			replace_nodes(t_info *info);
 
 void			print_paths(t_list *paths);
 
