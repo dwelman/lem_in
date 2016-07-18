@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/15 18:00:13 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/18 10:31:04 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,8 @@ SRC = $(PATH)main.c \
 	  $(PATH)trim_paths.c \
 	  $(PATH)rm_intersect.c \
 	  $(PATH)ft_lst_removeindex.c \
-	  $(PATH)print_paths.c
+	  $(PATH)print_paths.c \
+	  $(PATH)replace_nodes.c
 
 OBJ = $(SRC:.c=.o)
 
