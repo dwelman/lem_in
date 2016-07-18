@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 13:57:57 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 14:02:32 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct	s_ant
 {
 	int			number;
 	t_list		*path;
+	t_list		*crawl;
 }				t_ant;
 
 typedef struct	s_info
