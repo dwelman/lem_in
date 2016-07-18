@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 14:02:32 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 14:10:40 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct	s_info
 	t_list		*paths;
 	t_list		*short_paths;
 }				t_info;
+
+int				move_ant(t_ant *ant, t_node *end);
 
 t_ant			*make_ant(int num, t_list *path);
 
