@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 08:51:57 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 09:40:09 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,15 @@ t_list	*store_info(void)
 
 	get_next_line(0, &line);
 	first = ft_lstnew((void *)line);
-	ft_printf("%s\n", line);
 	//if (line)
 		//free(line);
 	while (get_next_line(0, &line))
 	{
-		ft_printf("%s\n", line);
 		list = ft_lstnew((void *)line);
 		ft_lstappend(&first, list);
 		//if (line)
 			//free(line);
 	}
-	ft_printf("\n");
 	return (first);
 }
 
@@ -59,13 +56,28 @@ int		count_list(t_list *list)
 }
 
 /*
-** stores the input into relevant variables
+** stores the input into relevant variables, also checks that the map has links
 */
 
 void	interpret_input(t_info *info)
 {
 	int	i;
+	int	count;
 
+	count = 0;
+	i = 0;
+	while (info->input[i])
+	{
+		if (ft_strchr(info->input[i], '-') != NULL)
+			count++;
+		i++;
+	}
+	if (count == 0)
+		error();
+	i = -1;
+	while (info->input[++i])
+		ft_printf("%s\n", info->input[i]);
+	ft_printf("\n");
 	i = 0;
 	info->num_ants = ft_atoi(info->input[i++]);
 	if (info->num_ants <= 0)
