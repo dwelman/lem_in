@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/15 15:12:35 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/15 20:17:21 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 16:32:32 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	ft_lst_removeindex(t_list **list, int index)
 		{
 			if (i == 0)
 			{
-				//ft_printf("HELLO THERE KIND SIR!\n");
 				*list = crawl->next;
 				free(crawl);
 				return ;
@@ -35,6 +34,8 @@ void	ft_lst_removeindex(t_list **list, int index)
 			else
 			{
 				prev->next = crawl->next;
+				if (crawl->data)
+					free(crawl->data);
 				free(crawl);
 				return ;
 			}
