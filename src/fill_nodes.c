@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 13:17:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/11 12:32:37 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 08:24:27 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static int		count_nodes(t_info *info, int i)
 			count++;
 		i++;
 	}
-	if (count == 0)
+	if (count <= 1)
 		error();
 	return (count);
 }
@@ -111,6 +111,7 @@ void			fill_nodes(t_info *info, int *i)
 			set_bounds(info, j, start, end);
 			j++;
 		}
+		//Note to self: Free arr
 		*i += 1;
 	}
 	connect_nodes(info, i);

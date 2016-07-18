@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/15 13:23:56 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 08:48:10 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		check_node(t_list *list, t_node *node)
 
 int		search(t_info *info, t_node *node, t_node *goal)
 {
-	int	i;
+	int		i;
 	t_list	*crawl;
 
 	i = 0;
@@ -80,6 +80,7 @@ void	find_paths(t_info *info)
 			ft_printf("%s%s = FAILURE\n%s", "\x1B[31m", START->links[i]->name, "\x1B[37m"); ///////////////
 		i++;
 	}
+	///
 	t_list	*crawl;
 	t_list	*temp;
 
@@ -98,5 +99,6 @@ void	find_paths(t_info *info)
 		crawl = crawl->next;
 		i++;
 	}
+	///
 	trim_paths(info, info->paths);
 }

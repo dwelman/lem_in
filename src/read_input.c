@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 08:18:31 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/18 08:51:57 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ t_list	*store_info(void)
 	get_next_line(0, &line);
 	first = ft_lstnew((void *)line);
 	ft_printf("%s\n", line);
-	if (line)
-		free(line);
+	//if (line)
+		//free(line);
 	while (get_next_line(0, &line))
 	{
 		ft_printf("%s\n", line);
 		list = ft_lstnew((void *)line);
 		ft_lstappend(&first, list);
-		if (line)
-			free(line);
+		//if (line)
+			//free(line);
 	}
 	ft_printf("\n");
 	return (first);
