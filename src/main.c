@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 09:28:37 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 10:06:21 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(void)
 	read_info(&info);
 	find_paths(&info);
 	rm_intersect(&info);
+	replace_nodes(&info);
 	control_ants(&info);
 	return (0);
 }

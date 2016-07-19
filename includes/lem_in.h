@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 08:58:37 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 09:52:28 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct	s_node
 	int				num_ants;
 	int				num_links;
 	struct s_node	**links;
-	int				is_mid_room;
+	int				has_ant;
 	int				x;
 	int				y;
 }				t_node;

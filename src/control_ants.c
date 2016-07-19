@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 09:59:26 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 10:06:34 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	control_ants(t_info *info)
 			temp_node = (t_node *)temp_path->next->data;
 			if (temp_node->has_ant == 0)
 			{
+				ft_printf("HAI\n");
 				ft_lstappend(&info->ants, (void *)make_ant(cur_ant, temp_path));
 				cur_ant++;
 			}
