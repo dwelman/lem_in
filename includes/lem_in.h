@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 14:10:40 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 07:44:37 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct	s_node
 typedef struct	s_ant
 {
 	int			number;
+	int			has_moved;
 	t_list		*path;
 	t_list		*crawl;
 }				t_ant;
@@ -53,8 +54,11 @@ typedef struct	s_info
 	t_node		*end;
 	t_list		*checked;
 	t_list		*paths;
+	t_list		*ants;
 	t_list		*short_paths;
 }				t_info;
+
+void			control_ants(t_info *info);
 
 int				move_ant(t_ant *ant, t_node *end);
 
