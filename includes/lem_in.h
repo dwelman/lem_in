@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 07:53:26 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/19 08:02:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct	s_inter
 	int		t;
 	int		r;
 }				t_inter;
+
+void			reset_ants(t_list *ants);
 
 void			control_ants(t_info *info);
 

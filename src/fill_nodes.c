@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 13:17:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 08:24:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 08:11:13 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,11 @@ static int		count_nodes(t_info *info, int i)
 void			fill_data(t_info *info, char **arr, int j)
 {
 	if (arr[0])
+	{
+		if (*arr[0] == 'L')
+			error();
 		NODES[j]->name = arr[0];
+	}
 	else
 		error();
 	if (arr[1])
