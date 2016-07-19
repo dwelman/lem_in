@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 08:12:13 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 08:59:00 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	control_ants(t_info *info)
 	{
 		path_crawl = info->paths;
 		reset_ants(info->ants);
-	}	
+		move_all_ants(info->ants, info->end);
+	}
 }
