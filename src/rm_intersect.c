@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/15 13:45:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 08:46:22 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/19 12:04:31 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int			cmp_paths(t_list *p1, t_list *p2, int index_1, int index_2)
 		{
 			return (index_2);
 		}
-		else if (count_2 < count_1)
+		else if (count_2 <= count_1)
 			return (index_1);
 		else
 			return (-1);
