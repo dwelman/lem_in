@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/18 14:11:00 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/19 08:01:35 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,9 @@ SRC = $(PATH)main.c \
 	  $(PATH)print_paths.c \
 	  $(PATH)replace_nodes.c \
 	  $(PATH)make_ant.c \
-	  $(PATH)move_ant.c
+	  $(PATH)move_ant.c \
+	  $(PATH)control_ants.c \
+	  $(PATH)reset_ants.c
 
 OBJ = $(SRC:.c=.o)
 
