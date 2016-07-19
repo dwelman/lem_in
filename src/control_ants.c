@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 10:24:09 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 11:12:55 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	control_ants(t_info *info)
 			}
 			path_crawl = path_crawl->next;
 		}
-		move_all_ants(info->ants, info->end);
 		ft_printf("HAI\n");
+		move_all_ants(info->ants, info->end);
 	}
 }
