@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/19 08:56:45 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/19 14:56:00 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,6 @@ SRC = $(PATH)main.c \
 	  $(PATH)connect_nodes.c \
 	  $(PATH)find_paths.c \
 	  $(PATH)rev_lists.c \
-	  $(PATH)trim_paths.c \
 	  $(PATH)rm_intersect.c \
 	  $(PATH)ft_lst_removeindex.c \
 	  $(PATH)print_paths.c \
@@ -33,7 +32,8 @@ SRC = $(PATH)main.c \
 	  $(PATH)move_ant.c \
 	  $(PATH)control_ants.c \
 	  $(PATH)reset_ants.c \
-	  $(PATH)move_all_ants.c
+	  $(PATH)move_all_ants.c \
+	  $(PATH)count_paths.c
 
 OBJ = $(SRC:.c=.o)
 

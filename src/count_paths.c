@@ -1,45 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   count_paths.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 14:52:01 by daviwel          ###   ########.fr       */
+/*   Created: 2016/07/19 14:55:01 by daviwel           #+#    #+#             */
+/*   Updated: 2016/07/19 14:55:43 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-int	main(void)
+/*
+** Counts all nodes in a path
+*/
+
+int		count_path(t_list *path)
 {
-	t_info	info;
-
-	info.checked = NULL;
-	info.ants = NULL;
-	read_info(&info);
-	find_paths(&info);
-	rm_intersect(&info);
-	replace_nodes(&info);
-
-	t_list	*temp;
 	t_list	*crawl;
-	t_node	*node;
+	int		count;
 
-	temp = info.paths;
-	while (temp != NULL)
+	count = 0;
+	crawl = path;
+	while (crawl != NULL)
 	{
-		crawl = (t_list *)temp->data;
-		while (crawl != NULL)
-		{
-			node = (t_node *)crawl->data;
-			ft_printf("%s\t", node->name);
-			crawl = crawl->next;
-		}
-		temp = temp->next;
-		ft_printf("\n");
+		count++;
+		crawl = crawl->next;
 	}
-	control_ants(&info);
-	return (0);
+	return (count);
 }
+

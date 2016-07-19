@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/18 14:04:55 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 13:52:28 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 14:50:43 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	move_ant(t_ant *ant, t_node *end)
 
 	if (ant->has_moved == 0 && ant->at_end == 0)
 	{
-		//ft_printf("ant num = %d\n");
 		ant->has_moved = 1;
 		if (ant->crawl != NULL)
 		{
@@ -36,7 +35,6 @@ int	move_ant(t_ant *ant, t_node *end)
 		ft_printf("L%d-%s ", ant->number, (char *)temp->name);
 		if (ft_strcmp((char *)temp->name, (char *)end->name) == 0)
 		{
-			//free(ant);
 			ant->at_end = 1;
 			return (1);
 		}
