@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:54:16 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 11:08:27 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 11:31:01 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ void	move_all_ants(t_list *ants, t_node *end)
 	{
 		temp_ant = (t_ant *)ant_crawl->data;
 		if (move_ant(temp_ant, end) == 1)
+		{
 			ft_lst_removeindex(&ants, i);
+			i--;
+		}
 		ant_crawl = ant_crawl->next;
 		i++;
 	}
