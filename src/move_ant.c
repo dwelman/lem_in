@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/18 14:04:55 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 09:19:14 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 09:58:40 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,16 @@
 int	move_ant(t_ant *ant, t_node *end)
 {
 	t_node	*temp;
+	t_list	*ant_crawl;
 
 	if (ant->has_moved == 0)
 	{
 		ant->has_moved = 1;
+		if (ant_crawl != NULL)
+		{
+			temp = (t_node *)ant_crawl->data;
+			temp->has_ant = 0;
+		}
 		if (ant->crawl->next != NULL)
 			ant->crawl = ant->crawl->next;
 		temp = (t_node *)ant->crawl->data;
@@ -33,6 +39,7 @@ int	move_ant(t_ant *ant, t_node *end)
 			free(ant);
 			return (1);
 		}
+		temp->has_ant = 1;
 	}
 	return (0);
 }

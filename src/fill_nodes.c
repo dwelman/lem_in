@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 13:17:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 08:11:13 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 09:54:22 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ void			fill_data(t_info *info, char **arr, int j)
 		NODES[j]->y = ft_atoi(arr[2]);
 	else
 		error();
+	NODES[j]->has_ant = 0;
 }
 
 /*
