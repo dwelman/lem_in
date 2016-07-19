@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/18 14:04:55 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 07:47:14 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 08:11:46 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 int	move_ant(t_ant *ant, t_node *end)
 {
 	t_node	*temp;
-	if (ant->has_moved = 0)
+	if (ant->has_moved == 0)
 	{
 		ant->has_moved = 1;
 		if (ant->crawl->next != NULL)
