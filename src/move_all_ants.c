@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   control_ants.c                                     :+:      :+:    :+:   */
+/*   reset_ants.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 08:59:00 by daviwel          ###   ########.fr       */
+/*   Created: 2016/07/19 07:54:16 by daviwel           #+#    #+#             */
+/*   Updated: 2016/07/19 08:58:48 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
 /*
-** This function is the control centre for all the ants. The loop runs until all
-** the ants are in the end room, and it creates new ants and gives them the path
-** they will follow
+** This function loops through all the ants and makes them move on their paths
 */
 
-void	control_ants(t_info *info)
+void	move_all_ants(t_list *ants, t_node *end)
 {
-	t_list	*path_crawl;
-	int		cur_ant;
+	t_list	*ant_crawl;
+	t_ant	*temp_ant;
 
-	cur_ant = 1;
-	while (info->end->num_ants != info->num_ants)
+	ant_crawl = ants;
+	while (ant_crawl != NULL)
 	{
-		path_crawl = info->paths;
-		reset_ants(info->ants);
-		move_all_ants(info->ants, info->end);
+		temp_ant = (t_ant *)ant_crawl->data;
+		move_ant(temp_ant, end);
+		ant_crawl = ant_crawl->next;
 	}
 }
