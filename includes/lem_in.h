@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 07:44:37 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 07:53:26 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,15 @@ typedef struct	s_info
 	t_list		*ants;
 	t_list		*short_paths;
 }				t_info;
+
+typedef struct	s_inter
+{
+	t_list	*cur;
+	t_list	*test;
+	int		c;
+	int		t;
+	int		r;
+}				t_inter;
 
 void			control_ants(t_info *info);
 
