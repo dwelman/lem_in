@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/14 09:57:10 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/15 20:17:19 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 09:03:00 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	trim_paths(t_info *info, t_list *paths)
 	i = 0;
 	k = (int *)malloc(sizeof(int));
 	rm_intersect(info);
+	crawl = info->paths;
 	while (crawl != NULL)
 	{
 		*k = 0;

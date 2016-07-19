@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 08:48:10 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 09:13:50 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,4 @@ void	find_paths(t_info *info)
 		crawl = crawl->next;
 		i++;
 	}
-	///
-	trim_paths(info, info->paths);
 }
