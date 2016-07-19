@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 09:52:28 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 13:31:21 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct	s_ant
 {
 	int			number;
 	int			has_moved;
+	int			at_end;
 	t_list		*path;
 	t_list		*crawl;
 }				t_ant;

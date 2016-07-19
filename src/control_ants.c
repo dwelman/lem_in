@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 11:12:55 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 13:33:24 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	control_ants(t_info *info)
 	int		cur_ant;
 
 	cur_ant = 1;
-	while (info->end->num_ants != info->num_ants)
+	while (info->end->num_ants < info->num_ants)
 	{
 		path_crawl = info->paths;
 		reset_ants(info->ants);
@@ -35,7 +35,7 @@ void	control_ants(t_info *info)
 		{
 			temp_path = (t_list *)path_crawl->data;
 			temp_node = (t_node *)temp_path->next->data;
-			if (temp_node->has_ant == 0)
+			if (temp_node->has_ant == 0 && cur_ant <= info->num_ants)
 			{
 				ft_lstappend(&info->ants, ft_lstnew((void *)make_ant(cur_ant,
 								temp_path)));
@@ -43,7 +43,8 @@ void	control_ants(t_info *info)
 			}
 			path_crawl = path_crawl->next;
 		}
-		ft_printf("HAI\n");
 		move_all_ants(info->ants, info->end);
+		//ft_printf("Num ants = %d\n", info->end->num_ants);
+		ft_printf("\n");
 	}
 }

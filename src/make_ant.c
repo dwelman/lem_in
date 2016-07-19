@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/18 13:55:16 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 10:20:07 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/19 13:31:36 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@ t_ant	*make_ant(int num, t_list *path)
 	ret->number = num;
 	ret->path = path;
 	ret->crawl = path;
+	ret->at_end = 0;
 	return (ret);
 }
