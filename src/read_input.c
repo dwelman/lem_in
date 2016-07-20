@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/18 09:40:09 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/20 14:32:05 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,10 @@ t_list	*store_info(void)
 
 	get_next_line(0, &line);
 	first = ft_lstnew((void *)line);
-	//if (line)
-		//free(line);
 	while (get_next_line(0, &line))
 	{
 		list = ft_lstnew((void *)line);
 		ft_lstappend(&first, list);
-		//if (line)
-			//free(line);
 	}
 	return (first);
 }
@@ -143,6 +139,6 @@ void	read_info(t_info *info)
 	}
 	info->input[i] = NULL;
 	check_map(info->input, length);
-	//ft_lstdel(list);
+	ft_lstdel(list);
 	interpret_input(info);
 }

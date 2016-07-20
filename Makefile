@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/19 14:56:00 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/20 15:29:49 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,11 @@ SRC = $(PATH)main.c \
 	  $(PATH)control_ants.c \
 	  $(PATH)reset_ants.c \
 	  $(PATH)move_all_ants.c \
-	  $(PATH)count_paths.c
+	  $(PATH)count_paths.c \
+	  $(PATH)clear_ants.c \
+	  $(PATH)free_node.c \
+	  $(PATH)free_path.c \
+	  $(PATH)free_nodes.c
 
 OBJ = $(SRC:.c=.o)
 

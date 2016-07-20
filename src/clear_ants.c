@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_paths.c                                      :+:      :+:    :+:   */
+/*   clear_ants.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/07/19 14:55:01 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 14:58:18 by daviwel          ###   ########.fr       */
+/*   Created: 2016/07/19 14:58:23 by daviwel           #+#    #+#             */
+/*   Updated: 2016/07/20 14:25:59 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
 
-/*
-** Counts all nodes in a path
-*/
-
-int		count_path(t_list *path)
+void	clear_ants(t_list *ants)
 {
 	t_list	*crawl;
-	int		count;
 
-	count = 0;
-	crawl = path;
+	crawl = ants;
 	while (crawl != NULL)
 	{
-		count++;
-		crawl = crawl->next;
+		free(crawl->data);
+		crawl = crawl->next;		
 	}
-	return (count);
 }
-
