@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 14:52:01 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/20 14:40:31 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(void)
 	info.ants = NULL;
 	read_info(&info);
 	find_paths(&info);
+	ft_printf("HAI\n");
+	sort_paths(&info);
 	rm_intersect(&info);
 	replace_nodes(&info);
 
