@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 13:31:21 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/20 15:23:51 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ typedef struct	s_info
 	t_list		*checked;
 	t_list		*paths;
 	t_list		*ants;
-	t_list		*short_paths;
 }				t_info;
 
 typedef struct	s_inter
@@ -67,6 +66,14 @@ typedef struct	s_inter
 	int		t;
 	int		r;
 }				t_inter;
+
+void			free_nodes(t_node **nodes, int node_count);
+
+void			free_path(t_list *path);
+
+void			free_node(t_node *node);
+
+void			clear_ants(t_list *ants);
 
 void			move_all_ants(t_list *ants, t_node *end);
 
