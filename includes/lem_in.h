@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:40 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/20 15:23:51 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/20 16:31:52 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct	s_inter
 	int		t;
 	int		r;
 }				t_inter;
+
+void			sort_paths(t_info *info);
 
 void			free_nodes(t_node **nodes, int node_count);
 

@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/20 15:29:49 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/20 16:27:30 by ddu-toit         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = $(PATH)main.c \
 	  $(PATH)find_elem.c \
 	  $(PATH)connect_nodes.c \
 	  $(PATH)find_paths.c \
+	  $(PATH)sort_paths.c \
 	  $(PATH)rev_lists.c \
 	  $(PATH)rm_intersect.c \
 	  $(PATH)ft_lst_removeindex.c \

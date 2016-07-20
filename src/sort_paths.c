@@ -6,7 +6,7 @@
 /*   By: ddu-toit <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/20 14:13:39 by ddu-toit          #+#    #+#             */
-/*   Updated: 2016/07/20 15:14:25 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/20 16:33:43 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,12 @@ void	sort_paths(t_info *info)
 		p1 = info->paths;
 		while (p1 && p1->next)
 		{
-		print_paths(info->paths);
 			if (count_path((t_list*)p1->data) > count_path((t_list*)p1->next->data))
 			{
 				swap_paths(p1, p1->next);
 				swap = 1;
 			}
 			p1 = p1->next;
-		print_paths(info->paths);
 		}
 	}
 }

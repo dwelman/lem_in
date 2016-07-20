@@ -6,11 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2016/07/20 14:40:31 by ddu-toit         ###   ########.fr       */
-=======
-/*   Updated: 2016/07/20 15:28:26 by daviwel          ###   ########.fr       */
->>>>>>> 4ae4ae5ed1da6162a4212697f0971d4df024efe2
+/*   Updated: 2016/07/20 16:42:59 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +19,12 @@ int	main(void)
 
 	info.checked = NULL;
 	info.ants = NULL;
-<<<<<<< HEAD
-	read_info(&info);
-	find_paths(&info);
-	ft_printf("HAI\n");
-	sort_paths(&info);
-	rm_intersect(&info);
-	replace_nodes(&info);
-=======
 	read_info(&info);//fix leaks
 	find_paths(&info);//fix leaks
+	ft_printf("lel\n");
+	sort_paths(&info);
 	rm_intersect(&info);//fix leaks
 	replace_nodes(&info);//you're good buddy
->>>>>>> 4ae4ae5ed1da6162a4212697f0971d4df024efe2
 
 	t_list	*temp;
 	//t_list	*crawl;
