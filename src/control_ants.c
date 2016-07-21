@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 07:26:21 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/21 13:44:17 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 13:45:59 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,39 +18,40 @@
 ** they will follow
 */
 
+void	spawn_ants(t_control *c, t_info *info)
+{
+	while (c->path_crawl != NULL)
+	{
+		c->cur_len = count_path(c->path_crawl);
+		c->temp_path = (t_list *)c->path_crawl->data;
+		c->temp_node = (t_node *)c->temp_path->next->data;
+		if (c->cur_len == c->prev_len
+			|| c->cur_len - c->prev_len < info->num_ants - c->cur_ant)
+		{
+			if (c->temp_node->has_ant == 0 && c->cur_ant <= info->num_ants)
+			{
+				ft_lstappend(&info->ants, ft_lstnew((void *)make_ant(c->cur_ant,
+								c->temp_path)));
+				c->cur_ant++;
+			}
+		}
+		c->prev_len = count_path(c->path_crawl);
+		c->path_crawl = c->path_crawl->next;
+	}
+}
+
 void	control_ants(t_info *info)
 {
-	t_list	*path_crawl;
-	t_list	*temp_path;
-	t_node	*temp_node;
-	int		cur_ant;
-	int		prev_len;
-	int		cur_len;
+	t_control	c;
 
-	cur_ant = 1;
+	c.cur_ant = 1;
 	while (info->end->num_ants < info->num_ants)
 	{
-		path_crawl = info->paths;
-		prev_len = count_path(path_crawl);
+		c.path_crawl = info->paths;
+		c.prev_len = count_path(c.path_crawl);
 		reset_ants(info->ants);
 		move_all_ants(info->ants, info->end);
-		while (path_crawl != NULL)
-		{
-			cur_len = count_path(path_crawl);
-			temp_path = (t_list *)path_crawl->data;
-			temp_node = (t_node *)temp_path->next->data;
-			if (cur_len == prev_len || cur_len - prev_len < info->num_ants - cur_ant)
-			{
-				if (temp_node->has_ant == 0 && cur_ant <= info->num_ants)
-				{
-					ft_lstappend(&info->ants, ft_lstnew((void *)make_ant(cur_ant,
-									temp_path)));
-					cur_ant++;
-				}
-			}
-			prev_len = count_path(path_crawl);
-			path_crawl = path_crawl->next;
-		}
+		spawn_ants(&c, info);
 		move_all_ants(info->ants, info->end);
 		ft_printf("\n");
 	}

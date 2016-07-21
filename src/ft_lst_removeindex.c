@@ -6,11 +6,35 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/15 15:12:35 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/21 13:46:50 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 15:21:57 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
+
+void	first_node(t_list **list, t_list **crawl)
+{
+	t_list	*tc;
+
+	tc = *crawl;
+	*list = tc->next;
+	free(*crawl);
+	*crawl = NULL;
+}
+
+void	mid_node(t_list **list, t_list **prev, t_list **crawl)
+{
+	t_list *tc;
+	t_list *pc;
+
+	tc = *crawl;
+	pc = *prev;
+	pc->next = tc->next;
+	if (tc->data)
+		free(tc->data);
+	free(*crawl);
+	*crawl = NULL;
+}
 
 void	ft_lst_removeindex(t_list **list, int index)
 {
@@ -26,19 +50,9 @@ void	ft_lst_removeindex(t_list **list, int index)
 		if (i == index)
 		{
 			if (i == 0)
-			{
-				*list = crawl->next;
-				free(crawl);
-				return ;
-			}
+				first_node(list, &crawl);
 			else
-			{
-				prev->next = crawl->next;
-				if (crawl->data)
-					free(crawl->data);
-				free(crawl);
-				return ;
-			}
+				mid_node(list, &prev, &crawl);
 		}
 		else
 		{
