@@ -6,7 +6,7 @@
 #    By: daviwel <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/07/06 14:54:45 by daviwel           #+#    #+#              #
-#    Updated: 2016/07/21 07:56:09 by daviwel          ###   ########.fr        #
+#    Updated: 2016/07/21 12:31:24 by daviwel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,8 @@ SRC = $(PATH)main.c \
 	  $(PATH)clear_ants.c \
 	  $(PATH)free_node.c \
 	  $(PATH)free_path.c \
-	  $(PATH)free_nodes.c
+	  $(PATH)free_nodes.c \
+	  $(PATH)check_links.c
 
 OBJ = $(SRC:.c=.o)
 
