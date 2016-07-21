@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:12:26 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/20 16:42:59 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/21 08:59:54 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 
 	info.checked = NULL;
 	info.ants = NULL;
-	read_info(&info);//fix leaks
+	read_info(&info);
 	find_paths(&info);//fix leaks
 	ft_printf("lel\n");
 	sort_paths(&info);

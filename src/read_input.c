@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/20 14:32:05 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 08:17:51 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,13 @@ t_list	*store_info(void)
 	char	*line;
 
 	get_next_line(0, &line);
-	first = ft_lstnew((void *)line);
+	first = ft_lstnew((void *)ft_strdup(line));
+	free(line);
 	while (get_next_line(0, &line))
 	{
-		list = ft_lstnew((void *)line);
+		list = ft_lstnew((void *)ft_strdup(line));
 		ft_lstappend(&first, list);
+		free(line);
 	}
 	return (first);
 }
@@ -70,14 +72,14 @@ void	interpret_input(t_info *info)
 	}
 	if (count == 0)
 		error();
+	info->num_ants = ft_atoi(info->input[0]);
+	if (info->num_ants <= 0)
+		error();
 	i = -1;
 	while (info->input[++i])
 		ft_printf("%s\n", info->input[i]);
 	ft_printf("\n");
-	i = 0;
-	info->num_ants = ft_atoi(info->input[i++]);
-	if (info->num_ants <= 0)
-		error();
+	i = 1;
 	fill_nodes(info, &i);
 }
 
@@ -141,4 +143,6 @@ void	read_info(t_info *info)
 	check_map(info->input, length);
 	ft_lstdel(list);
 	interpret_input(info);
+	free_arr(info->input);
+	info->input = NULL;
 }
