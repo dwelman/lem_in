@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 13:17:34 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/21 13:06:53 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 13:43:11 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,6 @@ void			fill_nodes(t_info *info, int *i)
 		*i += 1;
 	}
 	check_links(info, *i);
-	ft_printf("HAI\n");
 	connect_nodes(info, i);
 	info->start->num_ants = info->num_ants;
 }
