@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/19 14:58:23 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/20 14:25:59 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 11:49:47 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ void	clear_ants(t_list *ants)
 	while (crawl != NULL)
 	{
 		free(crawl->data);
-		crawl = crawl->next;		
+		crawl = crawl->next;
 	}
 }

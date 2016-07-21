@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/08 21:29:50 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/19 09:13:50 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/21 11:42:15 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,29 +74,8 @@ void	find_paths(t_info *info)
 	while (i < START->num_links)
 	{
 		info->ret = 0;
-		if (search(info, START->links[i], info->end))
-			ft_printf("%s%s = SUCCESS\n%s", "\x1B[32m", START->links[i]->name, "\x1B[37m"); ////////////////
-		else
-			ft_printf("%s%s = FAILURE\n%s", "\x1B[31m", START->links[i]->name, "\x1B[37m"); ///////////////
+		search(info, START->links[i], info->end);
 		i++;
 	}
-	///
-	t_list	*crawl;
-	t_list	*temp;
-
-	i = 0;
 	rev_paths(info->paths);
-	crawl = info->paths;
-	while (crawl != NULL)
-	{
-		temp = (t_list *)crawl->data;
-		ft_printf("\nindex = %d\n", i);
-		while (temp != NULL)
-		{
-			ft_printf("%s\n", (char *)temp->data);
-			temp = temp->next;
-		}
-		crawl = crawl->next;
-		i++;
-	}
 }
