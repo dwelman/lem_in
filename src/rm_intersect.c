@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/15 13:45:46 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/20 16:21:04 by ddu-toit         ###   ########.fr       */
+/*   Updated: 2016/07/21 11:55:50 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,4 @@ void			rm_intersect(t_info *info)
 		in.cur = in.cur->next;
 		in.c++;
 	}
-	ft_printf("<<<<<<<<<<<<TRIMMED>>>>>>>>>\n");
-	print_paths(info->paths);
 }
