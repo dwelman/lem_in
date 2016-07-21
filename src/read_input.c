@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/21 08:17:51 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 12:47:37 by daviwel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,13 @@ void	interpret_input(t_info *info)
 	info->num_ants = ft_atoi(info->input[0]);
 	if (info->num_ants <= 0)
 		error();
+	i = 1;
+	fill_nodes(info, &i);
 	i = -1;
 	while (info->input[++i])
 		ft_printf("%s\n", info->input[i]);
 	ft_printf("\n");
-	i = 1;
-	fill_nodes(info, &i);
+
 }
 
 /*
