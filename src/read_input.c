@@ -6,7 +6,7 @@
 /*   By: daviwel <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/06 15:15:53 by daviwel           #+#    #+#             */
-/*   Updated: 2016/07/21 13:42:48 by daviwel          ###   ########.fr       */
+/*   Updated: 2016/07/21 15:40:52 by ddu-toit         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ void	interpret_input(t_info *info)
 	while (info->input[++i])
 		ft_printf("%s\n", info->input[i]);
 	ft_printf("\n");
-
 }
 
 /*
